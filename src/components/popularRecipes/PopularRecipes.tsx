@@ -15,7 +15,7 @@ const PopularRecipes: React.FC = () => {
         Popular Recipes
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-        {popularRecipes.map((recipe) => (
+        {popularRecipes?.map((recipe) => (
           <div
             key={recipe.id}
             className="shadow-md rounded-lg flex flex-col w-full sm:max-w-sm"

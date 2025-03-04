@@ -51,3 +51,8 @@ export interface RecipesState {
   searchLoading: boolean;
   searchError: string | null;
 }
+
+export type ButtonProps = {
+  label: string;
+  onClick: () => void;
+};

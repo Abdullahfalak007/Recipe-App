@@ -65,7 +65,7 @@ export const searchRecipes = createAsyncThunk<
     }
 
     const data = await response.json();
-    return data.results as Recipe[];
+    return data?.results as Recipe[];
   } catch (error) {
     return rejectWithValue("Network error");
   }

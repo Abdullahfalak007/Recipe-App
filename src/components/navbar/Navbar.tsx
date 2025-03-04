@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex space-x-6">
-            {MENUITEMS.map((item, index) => (
+            {MENUITEMS?.map((item, index) => (
               <li
                 key={index}
                 style={{ color: COLORS.navbarText }}
@@ -101,14 +101,14 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <ul className="mt-4 space-y-2 md:hidden">
-            {MENUITEMS.map((item, index) => (
+            {MENUITEMS?.map((item, index) => (
               <li
                 key={index}
                 style={{ color: COLORS.navbarText }}
                 className="font-medium hover:underline"
               >
                 <a href={item.path} onClick={() => setIsMenuOpen(false)}>
-                  {item.name}
+                  {item?.name}
                 </a>
               </li>
             ))}
