@@ -4,18 +4,13 @@ import { useFetchRecipes } from "../../hooks/useFetchRecipes";
 import HeroSection from "../../components/heroSection/HeroSection";
 import PopularRecipes from "../../components/popularRecipes/PopularRecipes";
 import RecentRecipes from "../../components/recentRecipes/RecentRecipes";
+import Loader from "../../components/loader/Loader";
 
 const Home = () => {
   const { recipes, loading, error } = useFetchRecipes();
 
-  useEffect(() => {
-    // Recipes are auto-fetched in useFetchRecipes
-  }, []);
-
   if (loading) {
-    return (
-      <p className="text-center text-xl font-semibold">Loading recipes...</p>
-    );
+    return <Loader />;
   }
 
   if (error) {

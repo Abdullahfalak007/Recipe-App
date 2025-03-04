@@ -107,6 +107,7 @@ import { IMAGES } from "../../constants/images";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
 import { COLORS } from "../../constants/colors";
+import Loader from "../../components/loader/Loader";
 
 const SearchRecipe: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -149,9 +150,7 @@ const SearchRecipe: React.FC = () => {
 
       {/* Search Results Section */}
       <div className="container mx-auto py-8">
-        {searchLoading && (
-          <p className="text-center text-xl font-semibold">Searching...</p>
-        )}
+        {searchLoading && <Loader />}
         {searchError && (
           <p className="text-center text-red-500">Error: {searchError}</p>
         )}

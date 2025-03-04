@@ -9,11 +9,13 @@ import xIcon from "../assets/xIcon.svg";
 import pinterestIcon from "../assets/pinterestIcon.svg";
 import linkedInIcon from "../assets/linkedInIcon.svg";
 import hamburgerIcon from "../assets/hamburgerIcon.svg";
+import loaderGif from "../assets/loader.gif";
 
 export const IMAGES = {
   logo,
   search,
   hero,
+  loaderGif,
   youtubeIcon,
   xIcon,
   pinterestIcon,

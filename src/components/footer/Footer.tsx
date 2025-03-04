@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         backgroundColor: COLORS.primary,
       }}
     >
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         {/* Logo & Brand Name */}
         <div className="flex items-center space-x-2 mb-4 md:mb-0">
           <img src={IMAGES.logo} alt="Logo" className="h-5 w-auto" />
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media */}
-        <div className="flex flex-col items-center">
+        <div className="lg:ml-72 md:ml-60 flex flex-col items-center md:justify-around">
           <span
             style={{ color: COLORS.navbarText }}
             className="font-medium mb-2"
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#FDF2D2] p-2 rounded"
+              className="inline-block bg-[#FDF2D2] p-2 rounded md:ml-10 lg:ml-12"
               style={{ backgroundColor: COLORS.secondaryColor }}
             >
               <img src={IMAGES.youtubeIcon} alt="YouTube" className="w-5 h-5" />
