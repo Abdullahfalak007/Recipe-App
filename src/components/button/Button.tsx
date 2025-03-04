@@ -2,7 +2,12 @@
 // import React, { useState } from "react";
 // import { COLORS } from "../../constants/colors";
 
-// const Button = ({ label, onClick }) => {
+// interface ButtonProps {
+//   label: string;
+//   onClick: () => void;
+// }
+
+// const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
 //   const [hover, setHover] = useState(false);
 
 //   return (
@@ -10,13 +15,15 @@
 //       onClick={onClick}
 //       onMouseEnter={() => setHover(true)}
 //       onMouseLeave={() => setHover(false)}
+//       className="transition-colors duration-300 bo"
 //       style={{
-//         backgroundColor: hover ? COLORS.buttonHoverBg : COLORS.buttonBg,
-//         color: "#fff",
+//         backgroundColor: hover ? COLORS.primary : COLORS.primary, // same color or a darker shade for hover
+//         color: "#000",
 //         padding: "0.5rem 1rem",
 //         borderRadius: "0.375rem",
 //         border: "none",
 //         cursor: "pointer",
+//         fontWeight: "bold",
 //       }}
 //     >
 //       {label}
@@ -45,13 +52,8 @@ const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
       onMouseLeave={() => setHover(false)}
       style={{
         backgroundColor: hover ? COLORS.primary : COLORS.primary, // same color or a darker shade for hover
-        color: "#000",
-        padding: "0.5rem 1rem",
-        borderRadius: "0.375rem",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold",
       }}
+      className={`transition-colors duration-300 w-40 h-8 rounded-full flex items-center justify-center gap-2 font-bold  text-black`}
     >
       {label}
     </button>
