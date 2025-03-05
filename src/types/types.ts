@@ -14,7 +14,6 @@ export type Recipe = {
     display_text: string;
   }[];
 
-  // Add the new fields here, marking them optional if not always present:
   tips_and_ratings_enabled?: boolean;
   tips_summary?: {
     by_line?: string;
