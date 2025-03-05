@@ -1,6 +1,6 @@
-// src/types/index.d.ts
+// src/types/types.ts
 
-export interface Recipe {
+export type Recipe = {
   id: number;
   name: string;
   thumbnail_url: string;
@@ -36,11 +36,9 @@ export interface Recipe {
     name: string;
     slug: string;
   }[];
-}
+};
 
-// src/types/index.d.ts
-
-export interface RecipesState {
+export type RecipesState = {
   recipes: Recipe[];
   popularRecipes: Recipe[];
   loading: boolean;
@@ -50,7 +48,7 @@ export interface RecipesState {
   searchResults: Recipe[];
   searchLoading: boolean;
   searchError: string | null;
-}
+};
 
 export type ButtonProps = {
   label: string;

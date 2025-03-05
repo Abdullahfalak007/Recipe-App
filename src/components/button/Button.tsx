@@ -1,7 +1,7 @@
 // src/components/button/Button.tsx
 import React, { useState } from "react";
 import { COLORS } from "../../constants/colors";
-import { ButtonProps } from "../../types";
+import { ButtonProps } from "../../types/types";
 
 const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
   const [hover, setHover] = useState(false);

@@ -4,7 +4,7 @@ import { useAppSelector } from "../../store/hooks";
 import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
 
-const RecentRecipes: React.FC = () => {
+const RecentRecipes = () => {
   const { recipes } = useAppSelector((state) => state.recipes);
   const navigate = useNavigate();
 
