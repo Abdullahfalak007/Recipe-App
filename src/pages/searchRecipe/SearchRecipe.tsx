@@ -19,7 +19,7 @@ const SearchRecipe: React.FC = () => {
   return (
     <div className="px-4">
       {/* Search Header Section */}
-      <div className="my-28 flex flex-col items-center">
+      <div className="my-32 flex flex-col items-center">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
           Search Recipes
         </h1>
