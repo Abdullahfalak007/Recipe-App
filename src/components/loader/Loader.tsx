@@ -1,4 +1,3 @@
-// src/components/Loader.tsx
 import React from "react";
 import { IMAGES } from "../../constants/images";
 

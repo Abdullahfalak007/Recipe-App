@@ -1,7 +1,6 @@
 // src/store/slices/recipesSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import type { Recipe, RecipesState } from "../../types/types";
-import type { RootState } from "../store";
 
 const initialState: RecipesState = {
   recipes: [],

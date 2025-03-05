@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "./useStoreHook";
 import { fetchRecipes } from "../store/slices/recipesSlice";
 
 export const useFetchRecipes = () => {

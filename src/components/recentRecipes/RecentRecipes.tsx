@@ -1,16 +1,9 @@
-// src/components/recentRecipes/RecentRecipes.tsx
 import React from "react";
-import { useAppSelector } from "../../store/hooks";
 import Button from "../button/Button";
-import { useNavigate } from "react-router-dom";
+import { useRecentRecipes } from "./useRecentRecipes";
 
 const RecentRecipes = () => {
-  const { recipes } = useAppSelector((state) => state.recipes);
-  const navigate = useNavigate();
-
-  // Pick the last 3 recipes (reverse so the newest appears first)
-  const recentRecipes = [...recipes].slice(-3).reverse();
-  if (!recentRecipes.length) return null;
+  const { recentRecipes, navigate } = useRecentRecipes();
 
   return (
     <div className="container mx-auto px-4 py-8">

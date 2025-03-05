@@ -1,4 +1,3 @@
-// src/components/footer/Footer.tsx
 import React from "react";
 import { COLORS } from "../../constants/colors";
 import { IMAGES } from "../../constants/images";

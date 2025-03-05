@@ -1,4 +1,3 @@
-// src/pages/home/Home.tsx
 import React, { useEffect } from "react";
 import { useFetchRecipes } from "../../hooks/useFetchRecipes";
 import HeroSection from "../../components/heroSection/HeroSection";

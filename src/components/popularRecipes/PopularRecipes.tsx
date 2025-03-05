@@ -1,13 +1,10 @@
 import React from "react";
-import { useAppSelector } from "../../store/hooks";
-import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
 import { COLORS } from "../../constants/colors";
+import { usePopularRecipes } from "./usePopularRecipes";
 
 const PopularRecipes: React.FC = () => {
-  const { popularRecipes } = useAppSelector((state) => state.recipes);
-  const navigate = useNavigate();
-  if (!popularRecipes.length) return null;
+  const { popularRecipes, navigate } = usePopularRecipes();
 
   return (
     <div className="container mx-auto px-4 py-8">

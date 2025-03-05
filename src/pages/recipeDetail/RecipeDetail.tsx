@@ -1,18 +1,9 @@
-// src/pages/recipeDetail/RecipeDetail.tsx
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useAppSelector } from "../../store/hooks";
 import { COLORS } from "../../constants/colors";
+import { useRecipeDetail } from "./useRecipeDetail";
 
 const RecipeDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-
-  // Look for the recipe in both the default and search arrays
-  const recipe = useAppSelector(
-    (state) =>
-      state.recipes.recipes.find((r) => r.id === Number(id)) ||
-      state.recipes.searchResults.find((r) => r.id === Number(id))
-  );
+  const { recipe } = useRecipeDetail();
 
   if (!recipe) {
     return (
@@ -22,7 +13,6 @@ const RecipeDetail: React.FC = () => {
     );
   }
 
-  // Deconstruct fields from the recipe
   const {
     name,
     thumbnail_url,

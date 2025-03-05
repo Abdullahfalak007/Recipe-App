@@ -1,4 +1,3 @@
-// src/components/heroSection/HeroSection.tsx
 import React from "react";
 import { IMAGES } from "../../constants/images";
 import { COLORS } from "../../constants/colors";

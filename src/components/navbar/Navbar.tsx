@@ -1,25 +1,17 @@
-// src/components/navbar/Navbar.tsx
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { IMAGES } from "../../constants/images";
 import { MENUITEMS } from "../../constants/menu";
 import { COLORS } from "../../constants/colors";
-import { useAppDispatch } from "../../store/hooks";
-import { searchRecipes } from "../../store/slices/recipesSlice";
+import { useNavbar } from "./useNavbar";
 
 const Navbar: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Trigger search on pressing Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && searchTerm.trim()) {
-      dispatch(searchRecipes(searchTerm.trim()));
-      navigate("/recipes");
-    }
-  };
+  const {
+    searchTerm,
+    isMenuOpen,
+    setSearchTerm,
+    setIsMenuOpen,
+    handleKeyDown,
+  } = useNavbar();
 
   return (
     <>

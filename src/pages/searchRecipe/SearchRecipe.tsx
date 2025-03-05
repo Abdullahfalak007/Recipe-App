@@ -1,27 +1,20 @@
-// src/pages/searchRecipe/SearchRecipe.tsx
-import React, { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { searchRecipes } from "../../store/slices/recipesSlice";
+import React from "react";
 import { IMAGES } from "../../constants/images";
 import Button from "../../components/button/Button";
-import { useNavigate } from "react-router-dom";
 import { COLORS } from "../../constants/colors";
 import Loader from "../../components/loader/Loader";
+import { useSearchRecipe } from "./useSearchRecipe";
 
 const SearchRecipe: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
-  const { searchResults, searchLoading, searchError } = useAppSelector(
-    (state) => state.recipes
-  );
-
-  // Trigger search on pressing Enter
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && searchTerm.trim()) {
-      dispatch(searchRecipes(searchTerm.trim()));
-    }
-  };
+  const {
+    searchTerm,
+    setSearchTerm,
+    searchResults,
+    searchLoading,
+    searchError,
+    handleKeyDown,
+    navigate,
+  } = useSearchRecipe();
 
   return (
     <div className="px-4">
