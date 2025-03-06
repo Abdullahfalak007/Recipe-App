@@ -3,6 +3,7 @@ import { IMAGES } from "../../constants/images";
 import RecipeCard from "../../components/recipeCard/RecipeCard";
 import Loader from "../../components/loader/Loader";
 import { useSearchRecipe } from "./useSearchRecipe";
+import { COLORS } from "../../constants/colors";
 
 const SearchRecipe: React.FC = () => {
   const {
@@ -31,7 +32,8 @@ const SearchRecipe: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="w-full pl-10 pr-3 py-2 rounded-full focus:outline-none focus:ring-2"
+            className="w-full pl-10 pr-3 py-2 rounded-2xl focus:outline-none focus:ring-2"
+            style={{ backgroundColor: COLORS.Bg }}
           />
         </div>
       </div>

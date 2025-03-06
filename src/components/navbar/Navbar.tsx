@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
       ></div>
 
       {/* Main Navbar */}
-      <nav className="px-6 md:px-12 py-3">
+      <nav className="px-6 md:px-12 py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
             {/* Logo text hidden on mobile */}
             <span
               style={{ color: COLORS.navbarText }}
-              className="hidden md:inline-block text-[26px] font-medium font-inter"
+              className="hidden md:inline-block text-[26px] font-inter"
             >
               Delícias à Mesa
             </span>
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
               <li
                 key={index}
                 style={{ color: COLORS.navbarText }}
-                className="font-medium hover:underline"
+                className="font-bold hover:underline"
               >
                 <a href={item.path}>{item.name}</a>
               </li>
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
           {/* Right side: Desktop Search Bar & Mobile Hamburger */}
           <div className="flex items-center space-x-4">
             {/* Search Bar (desktop only) */}
-            <div className="hidden md:block relative">
+            <div className="hidden xl:block relative">
               <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
                 <img
                   src={IMAGES.search}
@@ -76,14 +76,14 @@ const Navbar: React.FC = () => {
                   borderColor: COLORS.borderGray,
                   backgroundColor: COLORS.Bg,
                 }}
-                className="pl-10 pr-3 py-1 rounded-full focus:outline-none focus:ring-2"
+                className="pl-10 pr-3 py-1 rounded-2xl focus:outline-none focus:ring-2"
               />
             </div>
 
             {/* Hamburger Icon (mobile only) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden"
+              className="xl:hidden"
             >
               <img src={IMAGES.hamburgerIcon} alt="Menu" className="w-6 h-6" />
             </button>
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <ul className="mt-4 space-y-2 md:hidden">
+          <ul className="mt-4 space-y-2 xl:hidden">
             {MENUITEMS?.map((item, index) => (
               <li
                 key={index}
