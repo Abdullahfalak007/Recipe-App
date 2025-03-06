@@ -11,16 +11,19 @@ import Footer from "./components/footer/Footer";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<SearchRecipe />} />
-        <Route path="/recipe/:id" element={<RecipeDetail />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipes" element={<SearchRecipe />} />
+            <Route path="/recipe/:id" element={<RecipeDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
-
 export default App;

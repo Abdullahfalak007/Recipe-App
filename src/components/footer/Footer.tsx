@@ -4,17 +4,11 @@ import { IMAGES } from "../../constants/images";
 
 const Footer: React.FC = () => {
   return (
-    <footer
-      className="py-4"
-      style={{
-        backgroundColor: COLORS.primary,
-      }}
-    >
+    <footer className="py-12" style={{ backgroundColor: COLORS.primary }}>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         {/* Logo & Brand Name */}
         <div className="flex items-center space-x-2 mb-4 md:mb-0">
           <img src={IMAGES.logo} alt="Logo" className="h-5 w-auto" />
-          {/* Hide brand text on mobile */}
           <span
             style={{ color: COLORS.navbarText }}
             className="hidden md:inline-block text-[26px] font-medium font-inter"
@@ -24,7 +18,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media */}
-        <div className="lg:ml-72 md:ml-60 flex flex-col items-center md:justify-around">
+        <div className="md:ml-[20%] lg:ml-[25%] xl:ml-[40%] 2xl:ml-[50%] flex flex-col items-center md:justify-around">
           <span
             style={{ color: COLORS.navbarText }}
             className="font-medium mb-2"
@@ -36,7 +30,7 @@ const Footer: React.FC = () => {
               href="https://www.youtube.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#FDF2D2] p-2 rounded md:ml-10 lg:ml-12"
+              className="inline-block p-2 rounded"
               style={{ backgroundColor: COLORS.secondaryColor }}
             >
               <img src={IMAGES.youtubeIcon} alt="YouTube" className="w-5 h-5" />
@@ -45,7 +39,7 @@ const Footer: React.FC = () => {
               href="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#FDF2D2] p-2 rounded"
+              className="inline-block p-2 rounded"
               style={{ backgroundColor: COLORS.secondaryColor }}
             >
               <img src={IMAGES.xIcon} alt="X (Twitter)" className="w-5 h-5" />
@@ -54,7 +48,7 @@ const Footer: React.FC = () => {
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#FDF2D2] p-2 rounded"
+              className="inline-block p-2 rounded"
               style={{ backgroundColor: COLORS.secondaryColor }}
             >
               <img
@@ -67,7 +61,7 @@ const Footer: React.FC = () => {
               href="https://www.pinterest.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#FDF2D2] p-2 rounded"
+              className="inline-block p-2 rounded"
               style={{ backgroundColor: COLORS.secondaryColor }}
             >
               <img

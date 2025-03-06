@@ -16,7 +16,7 @@ const SearchRecipe: React.FC = () => {
   } = useSearchRecipe();
 
   return (
-    <div className="px-4">
+    <div className="container w-[85%] mx-auto px-4">
       {/* Search Header Section */}
       <div className="my-32 flex flex-col items-center">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
