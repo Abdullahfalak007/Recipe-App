@@ -53,3 +53,9 @@ export type ButtonProps = {
   label: string;
   onClick: () => void;
 };
+
+export type RecipeCardProps = {
+  recipe: Recipe;
+  layout?: "vertical" | "horizontal";
+  onViewRecipe?: (id: number) => void;
+};

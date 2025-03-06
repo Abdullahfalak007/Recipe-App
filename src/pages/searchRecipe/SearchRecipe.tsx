@@ -1,7 +1,6 @@
 import React from "react";
 import { IMAGES } from "../../constants/images";
-import Button from "../../components/button/Button";
-import { COLORS } from "../../constants/colors";
+import RecipeCard from "../../components/recipeCard/RecipeCard";
 import Loader from "../../components/loader/Loader";
 import { useSearchRecipe } from "./useSearchRecipe";
 
@@ -13,7 +12,6 @@ const SearchRecipe: React.FC = () => {
     searchLoading,
     searchError,
     handleKeyDown,
-    navigate,
   } = useSearchRecipe();
 
   return (
@@ -23,15 +21,13 @@ const SearchRecipe: React.FC = () => {
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-6">
           Search Recipes
         </h1>
-        {/* Use fluid width with max width */}
-        <div className="relative w-full max-w-xl ">
+        <div className="relative w-full max-w-xl">
           <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
             <img src={IMAGES.search} alt="Search Icon" className="w-5 h-5" />
           </div>
           <input
             type="text"
             placeholder="Search Recipes"
-            style={{ backgroundColor: COLORS.Bg }}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -47,43 +43,16 @@ const SearchRecipe: React.FC = () => {
           <p className="text-center text-red-500">Error: {searchError}</p>
         )}
         {!searchLoading && !searchError && searchResults.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-            {searchResults?.map((recipe) => (
-              <div
-                key={recipe.id}
-                className="bg-white shadow-md flex flex-col w-full sm:max-w-sm"
-              >
-                {/* Image Section */}
-                <div className="w-full overflow-hidden">
-                  <img
-                    src={recipe.thumbnail_url}
-                    alt={recipe.name}
-                    className="w-full h-auto object-cover rounded-t-xl"
-                  />
-                </div>
-                {/* Content Section */}
-                <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="text-lg font-semibold mb-2">{recipe.name}</h3>
-                  <p
-                    className="text-sm text-gray-600 mb-4 overflow-hidden"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                    }}
-                  >
-                    {recipe.description || "No description available."}
-                  </p>
-                  <div className="mt-auto">
-                    <Button
-                      label="View Recipe"
-                      onClick={() => navigate(`/recipe/${recipe.id}`)}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <>
+            <h2 className="text-2xl md:text-3xl font-bold text-left mb-6">
+              Search Result
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+              {searchResults?.map((recipe) => (
+                <RecipeCard key={recipe.id} recipe={recipe} layout="vertical" />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </div>
